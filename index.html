@@ -1,46 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daily AI Latest News</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <img src="images/logo.png" alt="Logo" class="logo" />
-    <h1>Daily AI Latest News</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="blog/blog1.html">Blog</a>
-    </nav>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Daily AI Latest News</h1>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="news.html">News</a>
+        <a href="tools.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="banner">
-    <img src="images/banner.jpg" alt="Banner" />
+  <!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <img src="images/hero-banner.png" alt="AI Future" style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
+    <h2>Welcome to the future of tech & AI</h2>
+    <p>Your daily dose of AI updates, analysis, and tools to grow smarter.</p>
+  </div>
+</section>
+
+
+  <!-- Featured Blog Card -->
+  <section class="featured">
+    <div class="container">
+      <div class="blog-card">
+        <img src="images/vinoad.png" alt="Vinod Khosla">
+        <div class="blog-info">
+          <h3>Vinod Khosla: AI Will Replace 80% Jobs in 5 Years</h3>
+          <p>AI will replace majority of jobs — but also open new doors. Here's what students must know now...</p>
+          <a href="blog/blog2.html">Read More</a>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <main>
-    <article class="post-preview">
-      <h2>AI Shocks Everyone with New Creative Ability</h2>
-      <p>Check how the latest AI model from OpenAI is creating songs and movies in minutes!</p>
-      <a href="blog/blog1.html">Read more</a>
-    </article>
+  <!-- Blog Cards Section -->
+  <section class="blog-section">
+    <div class="container">
+      <h2>Latest Articles</h2>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <img src="images/blog1.png" alt="AI Regulation">
+          <div class="blog-info">
+            <h3>Will AI Be Regulated Globally?</h3>
+            <p>Governments are discussing policies to manage AI growth and ethics. Here's what’s coming...</p>
+            <a href="blog/blog1.html">Read More</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <img src="images/blog2.png" alt="GPT vs Gemini">
+          <div class="blog-info">
+            <h3>GPT vs Gemini: The AI Battle</h3>
+            <p>Two powerful language models compete in speed, reasoning, and reliability. Who’s winning?</p>
+            <a href="blog/blog2.html">Read More</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <img src="images/ai-education.png" alt="AI in Education">
+          <div class="blog-info">
+            <h3>How AI Is Changing Classrooms</h3>
+            <p>From personalized tutoring to plagiarism detection — AI’s education impact is deepening.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <article class="post-preview">
-      <h2>Vinod Khosla Says AI Will Take 80% of Jobs</h2>
-      <p>Speaking with Zerodha's Nikhil Kamath, Khosla explains why students must rethink their future in the age of AI.</p>
-      <a href="blog/blog2.html">Read more</a>
-    </article>
+  <!-- Newsletter Signup -->
+  <section class="newsletter">
+    <div class="container">
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Get the latest AI news and tools delivered to your inbox.</p>
+      <form action="https://formspree.io/f/mqkrgqjr" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
 
-    <section class="affiliate">
-      <p>🚀 Recommended: <a href="https://affiliate-link.com" target="_blank">Buy Best AI Tools</a></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Daily AI Latest News</p>
-    <p><a href="#">Affiliate Disclosure</a> | <a href="#">Privacy Policy</a></p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Daily AI Latest News. All rights reserved.</p>
+      <p>Connect: <a href="https://www.instagram.com/sk_kanojiyaa/">Instagram</a> | <a href="https://www.linkedin.com/in/skkanojiya">LinkedIn</a></p>
+    </div>
   </footer>
 </body>
 </html>

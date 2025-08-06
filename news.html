@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live News - Daily AI Latest News</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Daily AI Latest News</h1>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="news.html" class="active">News</a>
+        <a href="tools.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="container">
+    <h2>Live IPO Subscription Status</h2>
+    <div id="ipo-container">
+      <p>Loading IPO data...</p>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section class="news-section">
+    <div class="container">
+      <h2>Live Tech & AI News</h2>
+      <p>Here are the most recent updates from the world of Artificial Intelligence, Startups, and Technology.</p>
+
+      <!-- Placeholder for future integration -->
+      <div class="live-news-widget">
+        <p><strong>📌 Coming Soon:</strong> Live AI updates, IPO subscription data, and trending tools — all updated daily.</p>
+        <p>You will be able to fetch and show data like Chittorgarh IPO status, CoinMarketCap, etc. here using APIs or scraping.</p>
+      </div>
+
+      <!-- Static News Sample -->
+      <div class="blog-grid">
+        <div class="blog-card">
+          <img src="images/news1.jpg" alt="AI Stock Boom">
+          <div class="blog-info">
+            <h3>AI Stocks Rally Globally in Q3</h3>
+            <p>Major AI-driven companies like Nvidia, Microsoft and Google show strong growth.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <img src="images/news2.jpg" alt="Startup Funding Drops">
+          <div class="blog-info">
+            <h3>Startup Funding Drops Amidst AI Transition</h3>
+            <p>Investors shift focus from general tech to specialized AI tools and platforms.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Daily AI Latest News. All rights reserved.</p>
+      <p>Connect: 
+        <a href="https://www.instagram.com/sk_kanojiyaa/">Instagram</a> | 
+        <a href="https://www.linkedin.com/in/skkanojiya">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+
+<script>
+  async function fetchIPOData() {
+    const container = document.getElementById('ipo-container');
+    container.innerHTML = '<p>Loading IPO data...</p>';
+
+    try {
+      const response = await fetch('http://127.0.0.1:5000/ipo');
+      const data = await response.json();
+
+      if (data.error) {
+        container.innerHTML = `<p>Error: ${data.error}</p>`;
+        return;
+      }
+
+      container.innerHTML = '';
+
+      data.forEach((ipo) => {
+        const card = document.createElement('div');
+        card.className = 'ipo-card';
+        card.innerHTML = `
+          <h3>${ipo.securityName}</h3>
+          <p><strong>Issue Size:</strong> ${ipo.issueSize}</p>
+          <p><strong>Price Band:</strong> ${ipo.priceBand}</p>
+          <p><strong>Retail Subscription:</strong> ${ipo.retailSubscription || 'N/A'}</p>
+          <p><strong>QIB Subscription:</strong> ${ipo.qibSubscription || 'N/A'}</p>
+          <p><strong>NII Subscription:</strong> ${ipo.niiSubscription || 'N/A'}</p>
+          <p><strong>Status:</strong> ${ipo.status || 'Live'}</p>
+        `;
+        container.appendChild(card);
+      });
+
+    } catch (err) {
+      container.innerHTML = `<p>Error fetching IPO data: ${err.message}</p>`;
+    }
+  }
+
+  fetchIPOData(); // initial load
+  setInterval(fetchIPOData, 300000); // refresh every 5 minutes (300,000 ms)
+</script>
+</body>
+</html>
